@@ -1,0 +1,51 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+  <input type="hidden" name="Id" [value]="service.formData.Id">
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text bg-white">
+              <i class="fas fa-robot"></i>
+          </div>
+        </div>
+        <input name="Name" #Name="ngModel" [(ngModel)]="service.formData.Name"
+         class="form-control" placeholder="Mission name" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text bg-white">
+              <i class="fas fa-user"></i>
+            </div>
+          </div>
+          <input name="CreatedBy" #CreatedBy="ngModel" [(ngModel)]="service.formData.CreatedBy"
+           class="form-control" placeholder="User name" required minlength="1" >
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text bg-white">
+              <i class="fas fa-seedling"></i>
+            </div>
+          </div>
+          <input name="Greenhouse" #CreatedBy="ngModel" [(ngModel)]="service.formData.Greenhouse"
+           class="form-control" placeholder="Greenhouse Name">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text bg-white">
+              <i class="fas fa-list"></i>
+            </div>
+          </div>
+          <input name="Parameters" #CreatedBy="ngModel" [(ngModel)]="service.formData.Parameters"
+           class="form-control" placeholder="Parameters List">
+      </div>
+    </div>
+   <div class="form-group">
+     <button class="btn btn-success btn-lg btn-block" type="submit" [disabled]="form.invalid"><i class="fas fa-play"></i> Create</button>
+   </div>
+  </form>
+  
